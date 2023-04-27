@@ -1,0 +1,14 @@
+.best_movie {
+    color: goldenrod;
+}
+
+.best_rated {
+    color: blue;
+}
+.cat_1, .cat_2, .cat_3 {
+    color: whitesmoke;
+}
+body {
+    background-color: black;
+    color: white;
+}
