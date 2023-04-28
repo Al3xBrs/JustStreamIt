@@ -1,14 +1,12 @@
-.best_movie {
-    color: goldenrod;
+body {
+    background-color: #282529;
+    color: white;
 }
 
-.best_rated {
-    color: blue;
+div#best_movies {
+    font-family: 'Dancing Script', cursive;
 }
-.cat_1, .cat_2, .cat_3 {
-    color: whitesmoke;
-}
-body {
-    background-color: black;
-    color: white;
+
+header {
+    margin: auto;
 }
