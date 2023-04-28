@@ -3,8 +3,9 @@ body {
     color: white;
 }
 
-div#best_movies {
+div#best_movies, div#categories {
     font-family: 'Dancing Script', cursive;
+    border: solid;
 }
 
 header {
