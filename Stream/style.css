@@ -3,11 +3,45 @@ body {
     color: white;
 }
 
-div#best_movies, div#categories {
+div#best_movies {
     font-family: 'Dancing Script', cursive;
-    border: solid;
+    border: 2px solid;
+    border-radius: 0% 50% 50% 0% / 0% 50% 50% 0%  ;
+    
+}
+ #categories ul li{
+    text-align: left;
+    list-style: none;
+    padding: auto;
+    font-family: 'Dancing Script', cursive;
+    border: 2px solid;
+    border-radius: 0% 50% 50% 0% / 0% 50% 50% 0%  ;
+}
+/* Header */
+
+#main_img {
+    text-align: left;
 }
 
-header {
-    margin: auto;
+#main_img:hover{
+    opacity: 0.5;
+}
+
+#main_title {
+    text-align: center;
+}
+
+/* Navigation */
+
+.navigation ul {
+    display: flex;
+}
+
+.navigation ul li{
+    list-style: none;
+    margin-right: 10px;
+}
+
+.navigation ul li:hover {
+    opacity: 0.5;
 }
