@@ -3,45 +3,91 @@ body {
     color: white;
 }
 
-div#best_movies {
-    font-family: 'Dancing Script', cursive;
+header.banner {
     border: 2px solid;
-    border-radius: 0% 50% 50% 0% / 0% 50% 50% 0%  ;
-    
-}
- #categories ul li{
-    text-align: left;
-    list-style: none;
-    padding: auto;
-    font-family: 'Dancing Script', cursive;
-    border: 2px solid;
-    border-radius: 0% 50% 50% 0% / 0% 50% 50% 0%  ;
-}
-/* Header */
-
-#main_img {
-    text-align: left;
+    background-color: aliceblue;
+    border-radius: 3% 3% 3% 3% / 10% 10% 10% 10%   ;
+    width: 100%;
+    height: 200px;
+    margin: 10px;
+    position: relative;
 }
 
-#main_img:hover{
-    opacity: 0.5;
-}
-
-#main_title {
+header.banner h1 {
+    color: black;
     text-align: center;
 }
 
-/* Navigation */
+header.banner img {
 
-.navigation ul {
-    display: flex;
 }
 
-.navigation ul li{
-    list-style: none;
-    margin-right: 10px;
+div#the_best_movie {
+    border: 2px solid;
+    background-color: aliceblue;
+    border-radius: 3% 3% 3% 3% / 10% 10% 10% 10%   ;
+    width: 1800px;
+    height: 500px;
+    margin: 10px;
+    position: relative;
 }
 
-.navigation ul li:hover {
-    opacity: 0.5;
+div#the_best_movie h1 {
+    font-family: 'Dancing Script', cursive;
+    color: black;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+}
+
+div#best_movies {
+    position: relative;
+    border: 2px solid;
+    background-color: aliceblue;
+    border-radius: 3% 3% 3% 3% / 10% 10% 10% 10%   ;
+    width: 1800px;
+    height: 200px;
+    margin: 10px;
+}
+
+div#best_movies h1{
+    position: absolute;
+    font-family: 'Dancing Script', cursive;
+    color: black;
+    bottom: 0;
+    right: 10px;
+}
+
+ div.categorie {
+    position: relative;
+    background-color: aliceblue;
+    border: 2px solid;
+    border-radius: 3% 3% 3% 3% / 10% 10% 10% 10%   ;
+    width: 1800px;
+    height: 200px;
+    margin: 10px;
+}
+
+div#anime h1 {
+    position: absolute;
+    font-family: 'Dancing Script', cursive;
+    color: black;
+    bottom: 0;
+    right: 10px;
+}
+
+div#action h1 {
+    position: absolute;
+    font-family: 'Dancing Script', cursive;
+    color: black;
+    bottom: 0;
+    right: 10px;
+}
+
+div#adventure h1 {
+    position: absolute;
+    font-family: 'Dancing Script', cursive;
+    color: black;
+    bottom: 0;
+    right: 10px;
 }
