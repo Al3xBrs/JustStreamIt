@@ -1,93 +1,71 @@
 body {
-    background-color: #282529;
-    color: white;
+    background-color: whitesmoke;
+    color: #000000;
 }
-
-header.banner {
+/* HEADER */
+.banner {
     border: 2px solid;
-    background-color: aliceblue;
-    border-radius: 3% 3% 3% 3% / 10% 10% 10% 10%   ;
-    width: 100%;
-    height: 200px;
-    margin: 10px;
-    position: relative;
+    background-color: #124e73;
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
 }
 
-header.banner h1 {
-    color: black;
+.banner h1 {
+    color: whitesmoke;
+}
+
+.button_group {
     text-align: center;
 }
 
-header.banner img {
-
+.button {
+    margin: 0 5px;
 }
 
-div#the_best_movie {
-    border: 2px solid;
-    background-color: aliceblue;
-    border-radius: 3% 3% 3% 3% / 10% 10% 10% 10%   ;
-    width: 1800px;
-    height: 500px;
-    margin: 10px;
-    position: relative;
+/* DIV - BEST MOVIE */
+
+.best_movie {
+    border: #000000 2px solid;
+    width: 90%;
+    height: 300px;
+    margin: 15px auto;
+}
+.title {
+    text-align: left;
+    margin-top: 50px;
+    margin-left: 20px;
 }
 
-div#the_best_movie h1 {
-    font-family: 'Dancing Script', cursive;
-    color: black;
-    position: absolute;
-    bottom: 0;
-    right: 10px;
+.play_button {
+    text-align: left;
+    margin-left: 50px;
 }
 
-div#best_movies {
-    position: relative;
-    border: 2px solid;
-    background-color: aliceblue;
-    border-radius: 3% 3% 3% 3% / 10% 10% 10% 10%   ;
-    width: 1800px;
-    height: 200px;
-    margin: 10px;
+.img {
+    text-align: center;
 }
 
-div#best_movies h1{
-    position: absolute;
-    font-family: 'Dancing Script', cursive;
-    color: black;
-    bottom: 0;
-    right: 10px;
+/* TITLE - BEST MOVIES */
+
+h1#categorie {
+    text-align: center;
+    margin-top: 80px;
 }
 
- div.categorie {
-    position: relative;
-    background-color: aliceblue;
-    border: 2px solid;
-    border-radius: 3% 3% 3% 3% / 10% 10% 10% 10%   ;
-    width: 1800px;
-    height: 200px;
-    margin: 10px;
+/* DIV - GENERAL BLOC & 7 BLOCS */
+.general_bloc {
+    /* border: #000000 2px solid; */
+    width: 90%;
+    height: 150px;
+    margin: 15px auto;
+    text-align: center;
 }
-
-div#anime h1 {
-    position: absolute;
-    font-family: 'Dancing Script', cursive;
-    color: black;
-    bottom: 0;
-    right: 10px;
-}
-
-div#action h1 {
-    position: absolute;
-    font-family: 'Dancing Script', cursive;
-    color: black;
-    bottom: 0;
-    right: 10px;
-}
-
-div#adventure h1 {
-    position: absolute;
-    font-family: 'Dancing Script', cursive;
-    color: black;
-    bottom: 0;
-    right: 10px;
+.bloc {
+    border: #000000 2px solid;
+    width: 200px;
+    height: 150px;
+    display: inline-block;
+    
 }
