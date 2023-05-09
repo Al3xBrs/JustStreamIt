@@ -28,15 +28,42 @@ div.button_group {
 
 /* DIV - BEST MOVIE */
 
-.best_movie {
-    border: #000000 2px solid;
-    width: 90%;
-    height: 300px;
-    margin: 15px auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+
+.best_movie_block {
+    border: #124e73 solid;
+    width: 50%;
+    margin: 100px;
+    margin-top: 80px;
 }
+
+.best_movie {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    grid-gap: 10px;
+}
+
+.one {
+    grid-column: 1;
+    grid-row: 1/4;
+}
+
+.two {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.three {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.four {
+    grid-column: 2;
+    grid-row: 3;
+}
+
  #movie_img {
     border: #000000 solid;
     grid-row-start: 1;
