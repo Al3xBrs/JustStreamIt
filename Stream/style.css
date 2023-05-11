@@ -1,5 +1,5 @@
 body {
-    background-color: whitesmoke;
+    background-color: #445169;
     color: #000000;
 }
 /* HEADER */
@@ -77,6 +77,8 @@ body {
 h1.categorie {
     text-align: center;
     margin-top: 80px;
+    margin-bottom: 80px;
+    color: whitesmoke;
 }
 
 /* DIV - GENERAL BLOC & 7 BLOCS */
@@ -86,6 +88,7 @@ h1.categorie {
 }
 
 .generalBloc {
+    border: whitesmoke solid;
     text-align: center;
     display: flex;
     flex-direction: row;
@@ -99,3 +102,54 @@ h1.categorie {
     margin: 10px;
     
 }
+
+.movieDialog {
+    background: rgb(57,57,64);
+    background: linear-gradient(90deg, rgba(57,57,64,1) 0%, rgba(86,86,181,1) 35%, rgba(117,184,198,1) 100%); 
+    color: whitesmoke;
+    text-align: center;
+}
+
+.movieDialog span {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-items {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  width: calc(100% / 4);
+  flex-shrink: 0;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.carousel-prev,
+.carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.carousel-prev {
+  left: 0;
+}
+
+.carousel-next {
+  right: 0;
+}
+
+  

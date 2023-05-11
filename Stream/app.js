@@ -3,9 +3,6 @@ async function dialog(){
     let movieDialogs = document.querySelectorAll('.movieDialog');
     let closeButtons = document.querySelectorAll('.closeButton');
 
-    console.log(moreButtons.length)
-    console.log(moreButtons)
-
     for (let i = 0; i < moreButtons.length; i++) {
         moreButtons[i].addEventListener('click', function onOpen() {
             let index = Array.prototype.indexOf.call(moreButtons, this);

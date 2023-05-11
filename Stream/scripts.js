@@ -20,6 +20,7 @@ async function bestMovies() {
     let bestMovieInfoRequest = await fetch(`${url_api}${idList[0]}`);
     let bestMovieInfoJson = await bestMovieInfoRequest.json();
     let bestMovieImg = document.querySelector("#bestMovieImg");
+    let bestMovieImgDial = document.querySelector("#bestMovieImgDial");
     let bestMovieTitle = document.querySelector("#bestMovieTitle");
     let bestMovieDesc = document.querySelector("#bestMovieDesc");
     let bestMovieGenre = document.querySelector("#bestMovieGenre");
@@ -38,41 +39,44 @@ async function bestMovies() {
     bestMovieImg.innerHTML =`
         <img src = "${bestMovieInfoJson.image_url}" title="${bestMovieInfoJson.title}" class="more-button"/>
     `;
+    bestMovieImgDial.innerHTML =`
+    <img src = "${bestMovieInfoJson.image_url}" title="${bestMovieInfoJson.title}"/>
+    `;
     bestMovieTitle.innerHTML =`
         <h2>${bestMovieInfoJson.title}</h2>
     `;
     bestMovieDesc.innerHTML =`
-        <p>${bestMovieInfoJson.description}</p>
+        <p><span>${bestMovieInfoJson.description}</p>
     `;
     bestMovieGenre.innerHTML =`
-        <p>Genres : ${bestMovieInfoJson.genres}</p>
+        <p><span>Genres</span> : ${bestMovieInfoJson.genres}</p>
     `;
     bestMovieOutDate.innerHTML =`
-        <p>Date de publication : ${bestMovieInfoJson.date_published}</p>
+        <p><span>Date de publication</span> : ${bestMovieInfoJson.date_published}</p>
     `;
     bestMovieRated.innerHTML =`
-        <p>Notation : ${bestMovieInfoJson.rated}</p>
+        <p><span>Notation</span> : ${bestMovieInfoJson.rated}</p>
     `;
     bestMovieScoreImdb.innerHTML =`
-        <p>Score IMDB : ${bestMovieInfoJson.imdb_score}</p>
+        <p><span>Score IMDB</span> : ${bestMovieInfoJson.imdb_score}</p>
     `;
     bestMovieReal.innerHTML =`
-        <p>Réalisateur : ${bestMovieInfoJson.directors}</p>
+        <p><span>Réalisateur</span> : ${bestMovieInfoJson.directors}</p>
     `;
     bestMovieActors.innerHTML =`
-        <p>Acteurs : ${bestMovieInfoJson.actors}</p>
+        <p><span>Acteurs</span> : ${bestMovieInfoJson.actors}</p>
     `;
     bestMovieDuration.innerHTML =`
-        <p>Durée : ${bestMovieInfoJson.duration} min</p>
+        <p><span>Durée</span> : ${bestMovieInfoJson.duration} min</p>
     `;
     bestMovieOriginCountry.innerHTML =`
-        <p>Pays d'origine : ${bestMovieInfoJson.countries}</p>
+        <p><span>Pays d'origine</span> : ${bestMovieInfoJson.countries}</p>
     `;
     bestMovieBOResult.innerHTML =`
-        <p>Résultat du Box Office : ${bestMovieInfoJson.worldwide_gross_income}</p>
+        <p><span>Résultat du Box Office</span> : ${bestMovieInfoJson.worldwide_gross_income}</p>
     `;
     bestMovieSummary.innerHTML =`
-        <p>Résumé : ${bestMovieInfoJson.long_description}</p>
+        <p><span>Résumé</span> : ${bestMovieInfoJson.long_description}</p>
     `;
 
     // Catch 2nd to 7th best movie
@@ -81,6 +85,7 @@ async function bestMovies() {
         let MovieInfoRequest = await fetch(`${url_api}${idList[n]}`);
         let MovieInfoJson = await MovieInfoRequest.json();
         let MovieImg = document.querySelector(`#bestMovie${n+1}`);
+        let MovieImgDial = document.querySelector(`#bestMovie${n+1}ImgDial`);
         let MovieGenre = document.querySelector(`#bestMovie${n+1}Genre`);
         let MovieOutDate = document.querySelector(`#bestMovie${n+1}OutDate`);
         let MovieRated = document.querySelector(`#bestMovie${n+1}Rated`);
@@ -96,36 +101,39 @@ async function bestMovies() {
         MovieImg.innerHTML =`
             <img src="${MovieInfoJson.image_url}" title="${MovieInfoJson.title}" style="cursor: pointer;"/>
         `;
+        MovieImgDial.innerHTML =`
+        <img src="${MovieInfoJson.image_url}" title="${MovieInfoJson.title}" style="cursor: pointer;"/>
+        `;
         
         MovieGenre.innerHTML =`
-            <p>Genres : ${MovieInfoJson.genres}</p>
+            <p><span>Genres</span> : ${MovieInfoJson.genres}</p>
         `;
         MovieOutDate.innerHTML =`
-            <p>Date de publication : ${MovieInfoJson.date_published}</p>
+            <p><span>Date de publication</span> : ${MovieInfoJson.date_published}</p>
         `;
         MovieRated.innerHTML =`
-            <p>Notation : ${MovieInfoJson.rated}</p>
+            <p><span>Notation</span> : ${MovieInfoJson.rated}</p>
         `;
         MovieScoreImdb.innerHTML =`
-            <p>Score IMDB : ${MovieInfoJson.imdb_score}</p>
+            <p><span>Score IMDB</span> : ${MovieInfoJson.imdb_score}</p>
         `;
         MovieReal.innerHTML =`
-            <p>Réalisateur : ${MovieInfoJson.directors}</p>
+            <p><span>Réalisateur</span> : ${MovieInfoJson.directors}</p>
         `;
         MovieActors.innerHTML =`
-            <p>Acteurs : ${MovieInfoJson.actors}</p>
+            <p><span>Acteurs</span> : ${MovieInfoJson.actors}</p>
         `;
         MovieDuration.innerHTML =`
-            <p>Durée : ${MovieInfoJson.duration} min</p>
+            <p><span>Durée</span> : ${MovieInfoJson.duration} min</p>
         `;
         MovieOriginCountry.innerHTML =`
-            <p>Pays d'origine : ${MovieInfoJson.countries}</p>
+            <p><span>Pays d'origine</span> : ${MovieInfoJson.countries}</p>
         `;
         MovieBOResult.innerHTML =`
-            <p>Résultat du Box Office : ${MovieInfoJson.worldwide_gross_income}</p>
+            <p><span>Résultat du Box Office</span> : ${MovieInfoJson.worldwide_gross_income}</p>
         `;
         MovieSummary.innerHTML =`
-            <p>Résumé : ${MovieInfoJson.long_description}</p>
+            <p><span>Résumé</span> : ${MovieInfoJson.long_description}</p>
         `;
 
         n++;
@@ -151,18 +159,61 @@ async function genreSciFi() {
     while (n<8) {
         let MovieInfoRequest = await fetch(`${url_api}${idList[n]}`);
         let MovieInfoJson = await MovieInfoRequest.json();
-        let MovieImg = document.querySelector(`.scifiMovie${n+1}`);
-        // let MovieTitle = document.querySelector(".bestMovieTitle")
-        // let MovieDesc = document.querySelector(".bestMovieDesc")
+        let MovieImg = document.querySelector(`#scifiMovie${n+1}`);
+        let MovieImgDial = document.querySelector(`#scifiMovie${n+1}ImgDial`);
+        let MovieGenre = document.querySelector(`#scifiMovie${n+1}Genre`);
+        let MovieOutDate = document.querySelector(`#scifiMovie${n+1}OutDate`);
+        let MovieRated = document.querySelector(`#scifiMovie${n+1}Rated`);
+        let MovieScoreImdb = document.querySelector(`#scifiMovie${n+1}ScoreImdb`);
+        let MovieReal = document.querySelector(`#scifiMovie${n+1}Real`);
+        let MovieActors = document.querySelector(`#scifiMovie${n+1}Actors`);
+        let MovieDuration = document.querySelector(`#scifiMovie${n+1}Duration`);
+        let MovieOriginCountry = document.querySelector(`#scifiMovie${n+1}OriginCountry`);
+        let MovieBOResult = document.querySelector(`#scifiMovie${n+1}BOResult`);
+        let MovieSummary = document.querySelector(`#scifiMovie${n+1}Summary`);
 
         // Add on the html file
         MovieImg.innerHTML =`
-            <img src = "${MovieInfoJson.image_url}" title="${MovieInfoJson.title}"/>
+            <img src="${MovieInfoJson.image_url}" title="${MovieInfoJson.title}" style="cursor: pointer;"/>
         `;
+        MovieImgDial.innerHTML =`
+        <img src="${MovieInfoJson.image_url}" title="${MovieInfoJson.title}" style="cursor: pointer;"/>
+        `;
+        
+        MovieGenre.innerHTML =`
+            <p><span>Genres</span> : ${MovieInfoJson.genres}</p>
+        `;
+        MovieOutDate.innerHTML =`
+            <p><span>Date de publication</span> : ${MovieInfoJson.date_published}</p>
+        `;
+        MovieRated.innerHTML =`
+            <p><span>Notation</span> : ${MovieInfoJson.rated}</p>
+        `;
+        MovieScoreImdb.innerHTML =`
+            <p><span>Score IMDB</span> : ${MovieInfoJson.imdb_score}</p>
+        `;
+        MovieReal.innerHTML =`
+            <p><span>Réalisateur</span> : ${MovieInfoJson.directors}</p>
+        `;
+        MovieActors.innerHTML =`
+            <p><span>Acteurs</span> : ${MovieInfoJson.actors}</p>
+        `;
+        MovieDuration.innerHTML =`
+            <p><span>Durée</span> : ${MovieInfoJson.duration} min</p>
+        `;
+        MovieOriginCountry.innerHTML =`
+            <p><span>Pays d'origine</span> : ${MovieInfoJson.countries}</p>
+        `;
+        MovieBOResult.innerHTML =`
+            <p><span>Résultat du Box Office</span> : ${MovieInfoJson.worldwide_gross_income}</p>
+        `;
+        MovieSummary.innerHTML =`
+            <p><span>Résumé</span> : ${MovieInfoJson.long_description}</p>
+        `;
+
         n++;
     }
 }
-
 async function genreAction() {
 
     let i = 1;
@@ -182,14 +233,59 @@ async function genreAction() {
     while (n<8) {
         let MovieInfoRequest = await fetch(`${url_api}${idList[n]}`);
         let MovieInfoJson = await MovieInfoRequest.json();
-        let MovieImg = document.querySelector(`.actionMovie${n+1}`);
-        // let MovieTitle = document.querySelector(".bestMovieTitle")
-        // let MovieDesc = document.querySelector(".bestMovieDesc")
+        let MovieImg = document.querySelector(`#actionMovie${n+1}`);
+        let MovieImgDial = document.querySelector(`#actionMovie${n+1}ImgDial`);
+        let MovieGenre = document.querySelector(`#actionMovie${n+1}Genre`);
+        let MovieOutDate = document.querySelector(`#actionMovie${n+1}OutDate`);
+        let MovieRated = document.querySelector(`#actionMovie${n+1}Rated`);
+        let MovieScoreImdb = document.querySelector(`#actionMovie${n+1}ScoreImdb`);
+        let MovieReal = document.querySelector(`#actionMovie${n+1}Real`);
+        let MovieActors = document.querySelector(`#actionMovie${n+1}Actors`);
+        let MovieDuration = document.querySelector(`#actionMovie${n+1}Duration`);
+        let MovieOriginCountry = document.querySelector(`#actionMovie${n+1}OriginCountry`);
+        let MovieBOResult = document.querySelector(`#actionMovie${n+1}BOResult`);
+        let MovieSummary = document.querySelector(`#actionMovie${n+1}Summary`);
 
         // Add on the html file
         MovieImg.innerHTML =`
-            <img src = "${MovieInfoJson.image_url}" title="${MovieInfoJson.title}"/>
+            <img src="${MovieInfoJson.image_url}" title="${MovieInfoJson.title}" style="cursor: pointer;"/>
         `;
+
+        MovieImgDial.innerHTML =`
+        <img src="${MovieInfoJson.image_url}" title="${MovieInfoJson.title}" style="cursor: pointer;"/>
+        `;
+        
+        MovieGenre.innerHTML =`
+            <p><span>Genres</span> : ${MovieInfoJson.genres}</p>
+        `;
+        MovieOutDate.innerHTML =`
+            <p><span>Date de publication</span> : ${MovieInfoJson.date_published}</p>
+        `;
+        MovieRated.innerHTML =`
+            <p><span>Notation</span> : ${MovieInfoJson.rated}</p>
+        `;
+        MovieScoreImdb.innerHTML =`
+            <p><span>Score IMDB</span> : ${MovieInfoJson.imdb_score}</p>
+        `;
+        MovieReal.innerHTML =`
+            <p><span>Réalisateur</span> : ${MovieInfoJson.directors}</p>
+        `;
+        MovieActors.innerHTML =`
+            <p><span>Acteurs</span> : ${MovieInfoJson.actors}</p>
+        `;
+        MovieDuration.innerHTML =`
+            <p><span>Durée</span> : ${MovieInfoJson.duration} min</p>
+        `;
+        MovieOriginCountry.innerHTML =`
+            <p><span>Pays d'origine</span> : ${MovieInfoJson.countries}</p>
+        `;
+        MovieBOResult.innerHTML =`
+            <p><span>Résultat du Box Office</span> : ${MovieInfoJson.worldwide_gross_income}</p>
+        `;
+        MovieSummary.innerHTML =`
+            <p><span>Résumé</span> : ${MovieInfoJson.long_description}</p>
+        `;
+
         n++;
     }
 }
@@ -213,14 +309,59 @@ async function genreAdventure() {
     while (n<8) {
         let MovieInfoRequest = await fetch(`${url_api}${idList[n]}`);
         let MovieInfoJson = await MovieInfoRequest.json();
-        let MovieImg = document.querySelector(`.adventureMovie${n+1}`);
-        // let MovieTitle = document.querySelector(".bestMovieTitle")
-        // let MovieDesc = document.querySelector(".bestMovieDesc")
+        let MovieImg = document.querySelector(`#adventureMovie${n+1}`);
+        let MovieImgDial = document.querySelector(`#adventureMovie${n+1}ImgDial`);
+        let MovieGenre = document.querySelector(`#adventureMovie${n+1}Genre`);
+        let MovieOutDate = document.querySelector(`#adventureMovie${n+1}OutDate`);
+        let MovieRated = document.querySelector(`#adventureMovie${n+1}Rated`);
+        let MovieScoreImdb = document.querySelector(`#adventureMovie${n+1}ScoreImdb`);
+        let MovieReal = document.querySelector(`#adventureMovie${n+1}Real`);
+        let MovieActors = document.querySelector(`#adventureMovie${n+1}Actors`);
+        let MovieDuration = document.querySelector(`#adventureMovie${n+1}Duration`);
+        let MovieOriginCountry = document.querySelector(`#adventureMovie${n+1}OriginCountry`);
+        let MovieBOResult = document.querySelector(`#adventureMovie${n+1}BOResult`);
+        let MovieSummary = document.querySelector(`#adventureMovie${n+1}Summary`);
 
         // Add on the html file
         MovieImg.innerHTML =`
-            <img src = "${MovieInfoJson.image_url}" title="${MovieInfoJson.title}"/>
+            <img src="${MovieInfoJson.image_url}" title="${MovieInfoJson.title}" style="cursor: pointer;"/>
         `;
+        
+        MovieImgDial.innerHTML =`
+        <img src="${MovieInfoJson.image_url}" title="${MovieInfoJson.title}" style="cursor: pointer;"/>
+        `;
+
+        MovieGenre.innerHTML =`
+            <p><span>Genres</span> : ${MovieInfoJson.genres}</p>
+        `;
+        MovieOutDate.innerHTML =`
+            <p><span>Date de publication</span> : ${MovieInfoJson.date_published}</p>
+        `;
+        MovieRated.innerHTML =`
+            <p><span>Notation</span> : ${MovieInfoJson.rated}</p>
+        `;
+        MovieScoreImdb.innerHTML =`
+            <p><span>Score IMDB</span> : ${MovieInfoJson.imdb_score}</p>
+        `;
+        MovieReal.innerHTML =`
+            <p><span>Réalisateur</span> : ${MovieInfoJson.directors}</p>
+        `;
+        MovieActors.innerHTML =`
+            <p><span>Acteurs</span> : ${MovieInfoJson.actors}</p>
+        `;
+        MovieDuration.innerHTML =`
+            <p><span>Durée</span> : ${MovieInfoJson.duration} min</p>
+        `;
+        MovieOriginCountry.innerHTML =`
+            <p><span>Pays d'origine</span> : ${MovieInfoJson.countries}</p>
+        `;
+        MovieBOResult.innerHTML =`
+            <p><span>Résultat du Box Office</span> : ${MovieInfoJson.worldwide_gross_income}</p>
+        `;
+        MovieSummary.innerHTML =`
+            <p><span>Résumé</span> : ${MovieInfoJson.long_description}</p>
+        `;
+
         n++;
     }
 }
