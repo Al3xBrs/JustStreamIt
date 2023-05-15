@@ -9,14 +9,14 @@ function carouselbestMovies() {
             currentItem++;
             items.style.transform = `translateX(-${currentItem * 25}%)`;
         }
-        });
+    });
 
     prevBtn.addEventListener('click', () => {
         if (currentItem > 0) {
             currentItem--;
             items.style.transform = `translateX(-${currentItem * 25}%)`;
         }
-        });
+    });
 
 }
 
@@ -31,14 +31,14 @@ function carouselscifiMovies() {
             currentItem++;
             items.style.transform = `translateX(-${currentItem * 25}%)`;
         }
-        });
+    });
 
     prevBtn.addEventListener('click', () => {
         if (currentItem > 0) {
             currentItem--;
             items.style.transform = `translateX(-${currentItem * 25}%)`;
         }
-        });
+    });
 
 }
 
@@ -53,14 +53,14 @@ function carouselactionMovies() {
             currentItem++;
             items.style.transform = `translateX(-${currentItem * 25}%)`;
         }
-        });
+    });
 
     prevBtn.addEventListener('click', () => {
         if (currentItem > 0) {
             currentItem--;
             items.style.transform = `translateX(-${currentItem * 25}%)`;
         }
-        });
+    });
 
 }
 
@@ -75,14 +75,14 @@ function carouseladventureMovies() {
             currentItem++;
             items.style.transform = `translateX(-${currentItem * 25}%)`;
         }
-        });
+    });
 
     prevBtn.addEventListener('click', () => {
         if (currentItem > 0) {
             currentItem--;
             items.style.transform = `translateX(-${currentItem * 25}%)`;
         }
-        });
+    });
 
 }
 
