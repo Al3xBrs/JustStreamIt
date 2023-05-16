@@ -1,19 +1,27 @@
 body {
-    background-color: #445169;
+    background: rgb(135, 135, 135);
+    background: linear-gradient(180deg, rgba(135, 135, 135, 1) 0%, rgba(23, 23, 23, 1) 20%);
     color: #000000;
     margin: 0px;
     padding: 0px;
     width: 100%;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* HEADER */
 nav {
-    background: rgb(2, 0, 36);
-    background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    background: #3d3d3d;
     width: 100%;
     position: fixed;
     top: 0px;
     z-index: 900;
+}
+
+nav li img {
+    width: 70px;
+    height: auto;
+    margin-top: 5px;
+    position: relative;
 }
 
 nav>ul {
@@ -48,6 +56,7 @@ nav li:hover .submenu-cat {
 
 .submenu-cat li {
     border-bottom: 1px whitesmoke solid;
+    background-color: grey;
 }
 
 .submenu-cat li a {
@@ -57,6 +66,10 @@ nav li:hover .submenu-cat {
     width: 270px;
 }
 
+.submenu-cat li a:hover {
+    opacity: 0.5;
+}
+
 nav>ul>li>a {
     padding: 20px 30px;
 }
@@ -64,6 +77,13 @@ nav>ul>li>a {
 nav a {
     display: inline-block;
     text-decoration: none;
+    font-size: 20px;
+    color: whitesmoke;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav a:hover {
+    opacity: 0.5;
 }
 
 .submenu-cat {
@@ -75,13 +95,13 @@ nav a {
 
 .best_movie_block {
     color: whitesmoke;
-    background: rgb(57, 57, 64);
-    background: linear-gradient(90deg, rgba(57, 57, 64, 1) 0%, rgba(86, 86, 181, 1) 35%, rgba(117, 184, 198, 1) 100%);
-    border: blue solid;
+    background: rgb(135, 135, 135);
+    background: linear-gradient(90deg, rgba(135, 135, 135, 1) 0%, rgba(23, 23, 23, 1) 20%);
+    border: whitesmoke solid 2px;
     width: 50%;
     height: auto;
     margin: auto;
-    margin-top: 80px;
+    margin-top: 120px;
 }
 
 .best_movie {
@@ -120,35 +140,16 @@ h1.categorie {
     text-align: center;
     margin-top: 80px;
     margin-bottom: 80px;
+    padding: 30px;
     color: whitesmoke;
+    border-top: whitesmoke 1px solid;
 }
 
 /* DIV - GENERAL BLOC & 7 BLOCS */
-.main {
-    display: flex;
-    flex-direction: column;
-}
-
-.generalBloc {
-    border: whitesmoke solid;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.bloc {
-    border: #000000 2px solid;
-    width: 200px;
-    height: 112px;
-    margin: 10px;
-
-}
 
 .movieDialog {
-    background: rgb(57, 57, 64);
-    background: linear-gradient(90deg, rgba(57, 57, 64, 1) 0%, rgba(86, 86, 181, 1) 35%, rgba(117, 184, 198, 1) 100%);
+    background: rgb(135, 135, 135);
+    background: linear-gradient(180deg, rgba(135, 135, 135, 1) 0%, rgba(23, 23, 23, 1) 50%);
     color: whitesmoke;
     text-align: center;
 }
@@ -158,10 +159,15 @@ h1.categorie {
     text-decoration: underline;
 }
 
-.carousel-container {
-    width: 70%;
-    overflow: hidden;
+.fake-carousel {
     position: relative;
+}
+
+.carousel-container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    opacity: 0.8;
 }
 
 .carousel-items {
@@ -173,7 +179,15 @@ h1.categorie {
     width: calc(100% / 4);
     flex-shrink: 0;
     text-align: center;
-    border: 1px solid black;
+    background-color: whitesmoke;
+}
+
+.hover_img {
+    box-shadow: 10px 5px 5px grey;
+}
+
+.hover_img:hover {
+    opacity: 0.8;
 }
 
 .carousel-prev,
@@ -181,16 +195,26 @@ h1.categorie {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: transparent;
-    border: none;
-    font-size: 20px;
     cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.carousel-next :hover,
+.carousel-prev :hover {
+    opacity: 0.8;
 }
 
 .carousel-prev {
-    left: 0;
+    left: 50px;
 }
 
 .carousel-next {
-    right: 0;
+    right: 50px;
+}
+
+footer {
+    color: whitesmoke;
+    margin-top: 200px;
+    text-align: center;
 }

@@ -99,7 +99,7 @@ async function bestMovies() {
 
         // Add on the html file
         MovieImg.innerHTML = `
-            <img src="${MovieInfoJson.image_url}" title="${MovieInfoJson.title}" style="cursor: pointer;"/>
+            <img class="hover_img" src="${MovieInfoJson.image_url}" title="${MovieInfoJson.title}" style="cursor: pointer;"/>
         `;
         MovieImgDial.innerHTML = `
         <img src="${MovieInfoJson.image_url}" title="${MovieInfoJson.title}" style="cursor: pointer;"/>
@@ -174,7 +174,7 @@ async function genreSciFi() {
 
         // Add on the html file
         MovieImg.innerHTML = `
-            <img src="${MovieInfoJson.image_url}" title="${MovieInfoJson.title}" style="cursor: pointer;"/>
+            <img class="hover_img" src="${MovieInfoJson.image_url}" title="${MovieInfoJson.title}" style="cursor: pointer;"/>
         `;
         MovieImgDial.innerHTML = `
         <img src="${MovieInfoJson.image_url}" title="${MovieInfoJson.title}" style="cursor: pointer;"/>
@@ -248,7 +248,7 @@ async function genreAction() {
 
         // Add on the html file
         MovieImg.innerHTML = `
-            <img src="${MovieInfoJson.image_url}" title="${MovieInfoJson.title}" style="cursor: pointer;"/>
+            <img class="hover_img" src="${MovieInfoJson.image_url}" title="${MovieInfoJson.title}" style="cursor: pointer;"/>
         `;
 
         MovieImgDial.innerHTML = `
@@ -324,7 +324,7 @@ async function genreAdventure() {
 
         // Add on the html file
         MovieImg.innerHTML = `
-            <img src="${MovieInfoJson.image_url}" title="${MovieInfoJson.title}" style="cursor: pointer;"/>
+            <img class="hover_img" src="${MovieInfoJson.image_url}" title="${MovieInfoJson.title}" style="cursor: pointer;"/>
         `;
 
         MovieImgDial.innerHTML = `
