@@ -22,6 +22,7 @@ async function bestMovies() {
     let bestMovieImg = document.querySelector("#bestMovieImg");
     let bestMovieImgDial = document.querySelector("#bestMovieImgDial");
     let bestMovieTitle = document.querySelector("#bestMovieTitle");
+    let bestMovieTitleDial = document.querySelector("#bestMovieTitleDial");
     let bestMovieDesc = document.querySelector("#bestMovieDesc");
     let bestMovieGenre = document.querySelector("#bestMovieGenre");
     let bestMovieOutDate = document.querySelector("#bestMovieOutDate");
@@ -40,9 +41,12 @@ async function bestMovies() {
         <img src = "${bestMovieInfoJson.image_url}" title="${bestMovieInfoJson.title}" class="more-button"/>
     `;
     bestMovieImgDial.innerHTML = `
-    <img src = "${bestMovieInfoJson.image_url}" title="${bestMovieInfoJson.title}"/>
+        <img src = "${bestMovieInfoJson.image_url}" title="${bestMovieInfoJson.title}"/>
     `;
     bestMovieTitle.innerHTML = `
+        <h2>${bestMovieInfoJson.title}</h2>
+    `;
+    bestMovieTitleDial.innerHTML = `
         <h2>${bestMovieInfoJson.title}</h2>
     `;
     bestMovieDesc.innerHTML = `
